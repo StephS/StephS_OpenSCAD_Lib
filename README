@@ -1,0 +1,21 @@
+This library contains a set of functions and assemblies to be easily used in designs.
+List of current components:
+
+Bearings: 608, 624, 624 (doubled), R4RS, 626RS
+Belts: T2.5, T5, HTD3, MXL, GT2, GT2 (3mm tooth)
+Extrusions: 8020 10 (1 inch), 8020 15 (1.5 inch), 8020 20 (20 Millimeters), 8020 25 (25 Millimeters), 8020 30 (30 Millimeters), Misumi 2020 (20 Millimeters)
+Fans: 30x20x10mm, 40x40x10mm
+Linear Bearings: Igus 0810-10, LM8UU, LM8LUU, LME8UU, Bronze 8mm, IGUS 1012-10, LM10UU, LM10LUU, Bronze 10mm, LM12UU, LM12LUU
+Motors: NEMA17
+Nuts: All Metric standard size and half height nuts (M2.5 through M10), All Inch standard size and half height nuts
+Pulleys: GT2-3mm 17T, GT2 36T, GT2 40T
+Screws: All metric and inch screws up to 1/2in or 12mm, including Button head, Socket Head, Flat Head, and some 8020inc Flange Head
+Washers: Metric standard and fender washers up to 10mm or 1/2in
+
+The extrusion sizes are approximate, some calculations were required as vendors don't list the full specs.
+Assy_* (Assembly) files merge all of the connecting components into one tuple. This makes parametric designs easy.
+
+For example, If I wanted to use a M3 Sockethead Screw, I would specify screw_assy_M3_socket_head. To find the actual screw I would pass it to the getter function screw_assy_screw(screw_assy_M3_socket_head). This would return the screw tuple. To find the screw diameter, I would pass the returned tuple into the screw diameter getter function: screw_dia(screw_assy_screw(screw_assy_M3_socket_head)).
+This is an obvious workaround of OpenSCADs lack of an Object Oriented language.
+
+Feedback is welcome! Contact me through Google+ https://plus.google.com/+StephanieS3D
